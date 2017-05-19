@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>名簿情報</h1>
+        <h:form>
+            番号:<h:outputText value="#{bb.number}"/><br/>
+            名前:<h:outputText value="#{bb.name}" /><br/>
+            <h:link outcome="index">[戻る]</h:link><br/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>麻雀ゲーム</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>役判定メソッド</h1>
+            <h:panelGrid columns="9" cellspacing="2" border="0">
+                <h:commandButton image="/resources/images/man1.gif" action="#{bb.getNumber(0)}" />
+                <h:commandButton image="/resources/images/man2.gif" action="#{bb.getNumber(1)}" />
+                <h:commandButton image="/resources/images/man3.gif" action="#{bb.getNumber(2)}" />
+                <h:commandButton image="/resources/images/man4.gif" action="#{bb.getNumber(3)}" />
+                <h:commandButton image="/resources/images/man5.gif" action="#{bb.getNumber(4)}" />
+                <h:commandButton image="/resources/images/man6.gif" action="#{bb.getNumber(5)}" />
+                <h:commandButton image="/resources/images/man7.gif" action="#{bb.getNumber(6)}" />
+                <h:commandButton image="/resources/images/man8.gif" action="#{bb.getNumber(7)}" />
+                <h:commandButton image="/resources/images/man9.gif" action="#{bb.getNumber(8)}" />
+                <h:commandButton image="/resources/images/pin1.gif" action="#{bb.getNumber(9)}" />
+                <h:commandButton image="/resources/images/pin2.gif" action="#{bb.getNumber(10)}" />
+                <h:commandButton image="/resources/images/pin3.gif" action="#{bb.getNumber(11)}" />
+                <h:commandButton image="/resources/images/pin4.gif" action="#{bb.getNumber(12)}" />
+                <h:commandButton image="/resources/images/pin5.gif" action="#{bb.getNumber(13)}" />
+                <h:commandButton image="/resources/images/pin6.gif" action="#{bb.getNumber(14)}" />
+                <h:commandButton image="/resources/images/pin7.gif" action="#{bb.getNumber(15)}" />
+                <h:commandButton image="/resources/images/pin8.gif" action="#{bb.getNumber(16)}" />
+                <h:commandButton image="/resources/images/pin9.gif" action="#{bb.getNumber(17)}" />
+                <h:commandButton image="/resources/images/sou1.gif" action="#{bb.getNumber(18)}" />
+                <h:commandButton image="/resources/images/sou2.gif" action="#{bb.getNumber(19)}" />
+                <h:commandButton image="/resources/images/sou3.gif" action="#{bb.getNumber(20)}" />
+                <h:commandButton image="/resources/images/sou4.gif" action="#{bb.getNumber(21)}" />
+                <h:commandButton image="/resources/images/sou5.gif" action="#{bb.getNumber(22)}" />
+                <h:commandButton image="/resources/images/sou6.gif" action="#{bb.getNumber(23)}" />
+                <h:commandButton image="/resources/images/sou7.gif" action="#{bb.getNumber(24)}" />
+                <h:commandButton image="/resources/images/sou8.gif" action="#{bb.getNumber(25)}" />
+                <h:commandButton image="/resources/images/sou9.gif" action="#{bb.getNumber(26)}" />
+                <h:commandButton image="/resources/images/ji1-ton.gif" action="#{bb.getNumber(27)}" />
+                <h:commandButton image="/resources/images/ji2-nan.gif" action="#{bb.getNumber(28)}" />
+                <h:commandButton image="/resources/images/ji3-sha.gif" action="#{bb.getNumber(29)}" />
+                <h:commandButton image="/resources/images/ji4-pei.gif" action="#{bb.getNumber(30)}" />
+                <h:commandButton image="/resources/images/ji5-haku.gif" action="#{bb.getNumber(31)}" />
+                <h:commandButton image="/resources/images/ji6-hatsu.gif" action="#{bb.getNumber(32)}" />
+                <h:commandButton image="/resources/images/ji7-chun.gif" action="#{bb.getNumber(33)}" />
+            </h:panelGrid>
+            <p>入力結果：<h:outputText value="#{bb.full}" />
+            </p>
+            <h:panelGrid columns="20" cellspacing="2" border="0">
+                <h:graphicImage library="images" name="#{bb.outputPai[0]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[1]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[2]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[3]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[4]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[5]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[6]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[7]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[8]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[9]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[10]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[11]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[12]}" />
+                <h:graphicImage library="images" name="#{bb.outputPai[13]}" />
+            </h:panelGrid>
+            <h:panelGrid columns="2" cellspacing="3">
+                <h:commandButton value="初期化" action="#{bb.reset()}"/>           
+                <h:commandButton value="判定" action="#{bb.howAgari()}"/>
+                <h:commandButton value="役判定" action="#{bb.yakus()}" />
+            </h:panelGrid>
+            <p>判定結果</p>
+            <h:outputText value="#{bb.kekka}" />
+            <h:panelGrid columns="3" cellspacing="5" border="0">
+                <h:graphicImage library="images" name="#{bb.paisiGa[1][0]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[1][1]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[1][2]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[2][0]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[2][1]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[2][2]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[3][0]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[3][1]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[3][2]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[4][0]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[4][1]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[4][2]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[0][0]}" />
+                <h:graphicImage library="images" name="#{bb.paisiGa[0][1]}" />
+            </h:panelGrid>
+            <p><h:outputText value="#{bb.yakuName[0]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[1]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[2]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[3]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[4]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[5]}" /></p>
+            <p><h:outputText value="#{bb.yakuName[6]}" /></p>
+        </h:form> 
+    </h:body>
+</html>
+
